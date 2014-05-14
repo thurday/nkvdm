@@ -1,8 +1,9 @@
+# NXVM project files
+/src/nxvmsrc/
+/src/nxvmsrc
+
 # Object files
 *.o
-*.ko
-*.obj
-*.elf
 
 # Libraries
 *.lib
@@ -15,9 +16,25 @@
 *.dylib
 
 # Executables
-*.exe
 *.out
 *.app
-*.i*86
-*.x86_64
-*.hex
+
+# Automake directories
+/autom4te.cache/
+.deps/
+.dirstamp
+
+# Automake makefiles
+/config.h.in~
+/nkvdm
+/Makefile
+/config.h
+/config.status
+/config.log
+/stamp-h1
+
+# Astyle trash
+*.orig
+
+# Mac OS X trash
+.DS_Store
