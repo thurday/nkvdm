@@ -1,8 +1,11 @@
 AUTOMAKE_OPTIONS = subdir-objects
 bin_PROGRAMS = nkvdm
-nkvdm_SOURCES = src/main.c src/exec.c src/exec.h \
+nkvdm_SOURCES = src/main.c \
+	src/exec.c src/exec.h \
+	src/msdos.c src/msdos.h \
 	src/nxvmsrc/machine.c src/nxvmsrc/machine.h \
 	src/nxvmsrc/utils.c src/nxvmsrc/utils.h \
+	src/nxvmsrc/debug.c src/nxvmsrc/debug.h \
 	src/nxvmsrc/xasm32/aasm32.c src/nxvmsrc/xasm32/aasm32.h \
 	src/nxvmsrc/xasm32/dasm32.c src/nxvmsrc/xasm32/dasm32.h \
 	src/nxvmsrc/platform/platform.c src/nxvmsrc/platform/platform.h \

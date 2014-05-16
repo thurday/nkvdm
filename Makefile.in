@@ -97,7 +97,8 @@ am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am__dirstamp = $(am__leading_dot)dirstamp
 am_nkvdm_OBJECTS = src/main.$(OBJEXT) src/exec.$(OBJEXT) \
-	src/nxvmsrc/machine.$(OBJEXT) src/nxvmsrc/utils.$(OBJEXT) \
+	src/msdos.$(OBJEXT) src/nxvmsrc/machine.$(OBJEXT) \
+	src/nxvmsrc/utils.$(OBJEXT) src/nxvmsrc/debug.$(OBJEXT) \
 	src/nxvmsrc/xasm32/aasm32.$(OBJEXT) \
 	src/nxvmsrc/xasm32/dasm32.$(OBJEXT) \
 	src/nxvmsrc/platform/platform.$(OBJEXT) \
@@ -291,9 +292,12 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AUTOMAKE_OPTIONS = subdir-objects
-nkvdm_SOURCES = src/main.c src/exec.c src/exec.h \
+nkvdm_SOURCES = src/main.c \
+	src/exec.c src/exec.h \
+	src/msdos.c src/msdos.h \
 	src/nxvmsrc/machine.c src/nxvmsrc/machine.h \
 	src/nxvmsrc/utils.c src/nxvmsrc/utils.h \
+	src/nxvmsrc/debug.c src/nxvmsrc/debug.h \
 	src/nxvmsrc/xasm32/aasm32.c src/nxvmsrc/xasm32/aasm32.h \
 	src/nxvmsrc/xasm32/dasm32.c src/nxvmsrc/xasm32/dasm32.h \
 	src/nxvmsrc/platform/platform.c src/nxvmsrc/platform/platform.h \
@@ -428,6 +432,7 @@ src/$(DEPDIR)/$(am__dirstamp):
 	@: > src/$(DEPDIR)/$(am__dirstamp)
 src/main.$(OBJEXT): src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
 src/exec.$(OBJEXT): src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/msdos.$(OBJEXT): src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
 src/nxvmsrc/$(am__dirstamp):
 	@$(MKDIR_P) src/nxvmsrc
 	@: > src/nxvmsrc/$(am__dirstamp)
@@ -437,6 +442,8 @@ src/nxvmsrc/$(DEPDIR)/$(am__dirstamp):
 src/nxvmsrc/machine.$(OBJEXT): src/nxvmsrc/$(am__dirstamp) \
 	src/nxvmsrc/$(DEPDIR)/$(am__dirstamp)
 src/nxvmsrc/utils.$(OBJEXT): src/nxvmsrc/$(am__dirstamp) \
+	src/nxvmsrc/$(DEPDIR)/$(am__dirstamp)
+src/nxvmsrc/debug.$(OBJEXT): src/nxvmsrc/$(am__dirstamp) \
 	src/nxvmsrc/$(DEPDIR)/$(am__dirstamp)
 src/nxvmsrc/xasm32/$(am__dirstamp):
 	@$(MKDIR_P) src/nxvmsrc/xasm32
@@ -559,6 +566,8 @@ distclean-compile:
 
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/exec.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/main.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/msdos.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/nxvmsrc/$(DEPDIR)/debug.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/nxvmsrc/$(DEPDIR)/machine.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/nxvmsrc/$(DEPDIR)/utils.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/nxvmsrc/device/$(DEPDIR)/device.Po@am__quote@

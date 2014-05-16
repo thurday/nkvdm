@@ -1,13 +1,13 @@
 /* Copyright 2012-2014 Neko. */
 
-#ifndef NKVDM_EXEC_H
-#define NKVDM_EXEC_H
+#ifndef NKVDM_MSDOS_H
+#define NKVDM_MSDOS_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-int exec(int argc, char **argv);
+void int21();
 
 #ifdef __cplusplus
 }/*_EOCD_*/
