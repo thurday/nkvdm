@@ -44,8 +44,9 @@ Remove disk image and NKVDM runs without MS-DOS support
 
 Compiling
 ---------
-Copy source files from NXVM project to NKVDM source folder:  
-nxvm/src/ -> nkvdm/src/nxvmsrc/
+Copy source files from NXVM project (version 0.4.015d or higher) to NKVDM source folder:  
+nxvm/src/ -> nkvdm/src/nxvmsrc/  
+
 
 For Windows,  
 Add the files to the NKVDM project settings and compile.  
