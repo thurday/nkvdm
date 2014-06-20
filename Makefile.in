@@ -129,8 +129,6 @@ am_nkvdm_OBJECTS = src/main.$(OBJEXT) src/exec.$(OBJEXT) \
 	src/nxvmsrc/device/qdx/qdkeyb.$(OBJEXT)
 nkvdm_OBJECTS = $(am_nkvdm_OBJECTS)
 nkvdm_LDADD = $(LDADD)
-nkvdm_LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(nkvdm_LDFLAGS) \
-	$(LDFLAGS) -o $@
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -233,7 +231,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
 INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
 LDFLAGS = @LDFLAGS@
 LIBOBJS = @LIBOBJS@
-LIBS = @LIBS@
+LIBS = -lpthread -lncurses
 LTLIBOBJS = @LTLIBOBJS@
 MAKEINFO = @MAKEINFO@
 MKDIR_P = @MKDIR_P@
@@ -329,7 +327,6 @@ nkvdm_SOURCES = src/main.c \
 	src/nxvmsrc/device/qdx/qddisk.c src/nxvmsrc/device/qdx/qddisk.h \
 	src/nxvmsrc/device/qdx/qdkeyb.c src/nxvmsrc/device/qdx/qdkeyb.h
 
-nkvdm_LDFLAGS = -lpthread -lncurses
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
@@ -553,7 +550,7 @@ src/nxvmsrc/device/qdx/qdkeyb.$(OBJEXT):  \
 
 nkvdm$(EXEEXT): $(nkvdm_OBJECTS) $(nkvdm_DEPENDENCIES) $(EXTRA_nkvdm_DEPENDENCIES) 
 	@rm -f nkvdm$(EXEEXT)
-	$(AM_V_CCLD)$(nkvdm_LINK) $(nkvdm_OBJECTS) $(nkvdm_LDADD) $(LIBS)
+	$(AM_V_CCLD)$(LINK) $(nkvdm_OBJECTS) $(nkvdm_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)

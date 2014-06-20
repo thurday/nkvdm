@@ -35,4 +35,4 @@ nkvdm_SOURCES = src/main.c \
 	src/nxvmsrc/device/qdx/qdcga.c src/nxvmsrc/device/qdx/qdcga.h \
 	src/nxvmsrc/device/qdx/qddisk.c src/nxvmsrc/device/qdx/qddisk.h \
 	src/nxvmsrc/device/qdx/qdkeyb.c src/nxvmsrc/device/qdx/qdkeyb.h
-nkvdm_LDFLAGS = -lpthread -lncurses
+LIBS = -lpthread -lncurses
